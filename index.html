@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   Задание 1
+      //   Создайте функцию которая возводит переданное число в куб, необходимо вывести в консоль результат 2^3 степени + 3 ^ 3 степени
+      const num1 = 2
+      const num2 = 3
+      const degree = number => {
+        return number ** 3
+      }
+      console.log(degree(num1) + degree(num2))
+
+      //   Задание 2
+      //   Пользователь вводит с клавиатуры число, если ввёл текст, необходимо вывести что значение задано неверно
+      //   Создать фукнцию, которая высчитывает 13% от данного числа и выводит в консоль текст "Размер заработной платы за вычетом налогов равен значение"
+      const salary = money => {
+        return money * 0.87
+      }
+      const money = Number(prompt('Введите вашу сумму: '))
+      if (money > 0) {
+        console.log(
+          `Размер заработной платы за вычетом налогов равен ${salary(money)}`
+        )
+      } else {
+        console.log('Значение задано неверно')
+      }
+
+      // Задание 3
+      // Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию, которая определяет максимальное значение среди этих чисел
+      const number1 = +prompt('MaxNumber: Введите первое число')
+      const number2 = +prompt('MaxNumber: Введите второе число')
+      const number3 = +prompt('MaxNumber: Введите третье число')
+
+      const maxNumber = (number1, number2, number3) => {
+        if (number1 > number2 && number1 > number3) {
+          return number1
+        } else if (
+          (number2 > number1 && number2 > number3) ||
+          number1 === number2
+        ) {
+          return number2
+        } else {
+          return number3
+        }
+      }
+      console.log(maxNumber(number1, number2, number3))
+
+      // Задание 4
+      // Необходимо реализовать четыре функции, каждая функция должна принимать по два числа и выполнять одну из операций (каждая функция выполняет одну из них):
+      // 1. Сложение
+      // 2. Разность
+      // 3. Умножение
+      // 4. Деление
+      // Необходимо сделать так, чтобы функция вернула число, например выражение console.log(sum(2, 6)); должно вывести число 8 в консоль (sum - функция сложения в данном примере, ваши названия функций могут отличаться). Округлять значения, которые возвращают функции не нужно, однако, обратите внимание на разность, функция должна вычесть из большего числа меньшее, либо вернуть 0, если числа равны. Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать не нужно.
+      const calcNumber1 = +prompt('Калькулятор: Введите первое число')
+      const calcNumber2 = +prompt('Калькулятор: Введите второе число')
+
+      const sum = (calcNumber1, calcNumber2) => {
+        return calcNumber1 + calcNumber2
+      }
+      const sub = (calcNumber1, calcNumber2) => {
+        if (calcNumber1 >= calcNumber2) {
+          return calcNumber1 - calcNumber2
+        } else {
+          return calcNumber2 - calcNumber1
+        }
+      }
+      const mult = (calcNumber1, calcNumber2) => {
+        return calcNumber1 * calcNumber2
+      }
+      const div = (calcNumber1, calcNumber2) => {
+        return calcNumber1 / calcNumber2
+      }
+
+      console.log(sum(calcNumber1, calcNumber2))
+      console.log(sub(calcNumber1, calcNumber2))
+      console.log(mult(calcNumber1, calcNumber2))
+      console.log(div(calcNumber1, calcNumber2))
+    </script>
+  </body>
+</html>
